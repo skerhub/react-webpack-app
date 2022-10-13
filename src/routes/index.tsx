@@ -1,4 +1,3 @@
-import React from "react"
 import Mine from "../pages/Mine"
 import Home from "../pages/Home"
 import Mine1 from "../pages/Mine/Mine1"
