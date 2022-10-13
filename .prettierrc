@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"semi": false,
+	"overrides": [
+		{
+			"files": ["*.ts","*.tsx"],
+			"options": {
+				"quoteProps": "preserve",
+				"useTabs": true,
+				"tabWidth": 4,
+				"bracketSpacing": false,
+				"jsxBracketSameLine": true
+			}
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"target": "es2015",
+		"jsx": "react-jsx",
+		"strict": true,
+		"module": "esnext",
+		"lib": ["ES5","ESNext","DOM","ES2019"],
+		"importHelpers": true,
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"paths": {
+			"@/*": ["src/*"]
+		},
+		"types": ["react", "node"]
+	},
+	"include": [
+		"src/**/*",
+		"types/*.d.ts",
+	],
+	"exclude": [
+        "node_modules"
+    ]
+}
