@@ -1,16 +1,16 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { REACT_ENV } = process.env;
-const domanConfig = require('./domain.config')
+const path = require("path")
+const webpack = require("webpack")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const { REACT_ENV } = process.env
+const domanConfig = require("./domain.config")
 function commit() {
-  const child_process = require("child_process");
-  const spawn = child_process.spawnSync("git", ["show", "-s", "--format=%h"]);
+  const child_process = require("child_process")
+  const spawn = child_process.spawnSync("git", ["show", "-s", "--format=%h"])
   if (spawn.error) {
-    return "当前构建环境不支持";
+    return "当前构建环境不支持"
   } else {
-    return spawn.stdout.toString().trim();
+    return spawn.stdout.toString().trim()
   }
 }
 
@@ -117,10 +117,10 @@ module.exports = {
       chunkFilename: "style/[contenthash].css",
     }),
     new webpack.DefinePlugin({
-      DOMAIN_PREFIX:JSON.stringify(domanConfig[REACT_ENV]),
+      DOMAIN_PREFIX: JSON.stringify(domanConfig[REACT_ENV]),
       REACT_ENV: JSON.stringify(REACT_ENV),
       BUILD_INFO: JSON.stringify(`COMMIT_ID: ${commit()}`),
     }),
     new webpack.ProgressPlugin(),
   ],
-};
+}

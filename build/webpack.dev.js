@@ -1,7 +1,7 @@
-const webpack = require("webpack");
-const ESLintPlugin = require("eslint-webpack-plugin");
-const { merge } = require("webpack-merge");
-const baseConfig = require("./webpack.base");
+const webpack = require("webpack")
+const ESLintPlugin = require("eslint-webpack-plugin")
+const { merge } = require("webpack-merge")
+const baseConfig = require("./webpack.base")
 
 module.exports = merge(baseConfig, {
   mode: "development",
@@ -23,4 +23,4 @@ module.exports = merge(baseConfig, {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-});
+})

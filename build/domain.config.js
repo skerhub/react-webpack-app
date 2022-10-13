@@ -1,7 +1,7 @@
 module.exports = {
-    dev:{},
-    test:{},
-    rd:{},
-    lgy:{},
-    pro:{}
+  dev: {},
+  test: {},
+  rd: {},
+  lgy: {},
+  pro: {},
 }
