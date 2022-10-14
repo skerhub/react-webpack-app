@@ -1,4 +1,5 @@
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
 const { merge } = require("webpack-merge")
 const baseConfig = require("./webpack.base")
 
@@ -9,7 +10,9 @@ module.exports = merge(baseConfig, {
     chunkFilename: "script/[contenthash].js",
   },
   optimization: {
+    minimize: true,
     minimizer: [
+      new TerserPlugin(),
       new CssMinimizerPlugin({
         minimizerOptions: {
           preset: [

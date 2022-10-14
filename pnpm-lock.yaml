@@ -33,6 +33,7 @@ specifiers:
   react-dom: ^18.2.0
   react-router-dom: ^6.4.2
   style-loader: ^3.3.1
+  terser-webpack-plugin: ^5.3.6
   typescript: ^4.8.4
   webpack: ^5.74.0
   webpack-cli: ^4.10.0
@@ -74,6 +75,7 @@ devDependencies:
   postcss-loader: 7.0.1_postcss@8.4.18+webpack@5.74.0
   postcss-preset-env: 7.8.2_postcss@8.4.18
   style-loader: 3.3.1_webpack@5.74.0
+  terser-webpack-plugin: 5.3.6_webpack@5.74.0
   typescript: 4.8.4
   webpack: 5.74.0_webpack-cli@4.10.0
   webpack-cli: 4.10.0_ab58687d37ee52acb975995ff60cbd8a
@@ -3915,7 +3917,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': registry.npmmirror.com/@types/node/18.8.5
+      '@types/node': 18.8.5
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -5519,9 +5521,9 @@ packages:
     resolution: {integrity: sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/json-schema': registry.npmmirror.com/@types/json-schema/7.0.11
-      ajv: registry.npmmirror.com/ajv/6.12.6
-      ajv-keywords: registry.npmmirror.com/ajv-keywords/3.5.2_ajv@6.12.6
+      '@types/json-schema': 7.0.11
+      ajv: 6.12.6
+      ajv-keywords: 3.5.2_ajv@6.12.6
     dev: true
 
   /schema-utils/4.0.0:
@@ -6074,7 +6076,7 @@ packages:
       memfs: 3.4.7
       mime-types: 2.1.35
       range-parser: 1.2.1
-      schema-utils: registry.npmmirror.com/schema-utils/4.0.0
+      schema-utils: 4.0.0
       webpack: 5.74.0_webpack-cli@4.10.0
     dev: true
 
@@ -6312,17 +6314,6 @@ packages:
         optional: true
     dependencies:
       ajv: registry.npmmirror.com/ajv/8.11.0
-    dev: true
-
-  registry.npmmirror.com/ajv-keywords/3.5.2_ajv@6.12.6:
-    resolution: {integrity: sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz}
-    id: registry.npmmirror.com/ajv-keywords/3.5.2
-    name: ajv-keywords
-    version: 3.5.2
-    peerDependencies:
-      ajv: ^6.9.1
-    dependencies:
-      ajv: registry.npmmirror.com/ajv/6.12.6
     dev: true
 
   registry.npmmirror.com/ajv-keywords/5.1.0_ajv@8.11.0:
