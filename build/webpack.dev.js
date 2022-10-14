@@ -4,12 +4,13 @@ const { merge } = require("webpack-merge")
 const baseConfig = require("./webpack.base")
 
 module.exports = merge(baseConfig, {
-  devtool:'eval',
+  devtool: "eval",
   mode: "development",
   target: "web",
   devServer: {
-    hot:true,
+    hot: true,
     host: "127.0.0.1",
+    port: 8000,
     historyApiFallback: true,
     server: "http",
     static: {
@@ -22,6 +23,6 @@ module.exports = merge(baseConfig, {
   plugins: [
     new ESLintPlugin({
       extensions: ["tsx", "ts"],
-    })
+    }),
   ],
 })

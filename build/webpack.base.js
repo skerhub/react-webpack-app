@@ -3,7 +3,7 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const { REACT_ENV } = process.env
 const domanConfig = require("./domain.config")
 function commit() {
@@ -64,36 +64,31 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
+        test: /\.(css|less)$/,
         use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-              modules: {
-                localIdentName: "[local]--[hash:base64:5]",
+          REACT_ENV == "dev"
+            ? "style-loader"
+            : {
+                loader: MiniCssExtractPlugin.loader,
               },
-            },
-          },
-          "postcss-loader",
-        ],
-      },
-      {
-        test: /\.less$/,
-        use: [
-          "style-loader",
           {
             loader: "css-loader",
             options: {
+              sourceMap: true,
               importLoaders: 1,
               modules: {
                 localIdentName: "__[local]--[hash:base64:5]",
               },
             },
           },
-          "postcss-loader",
-          "less-loader",
+          {
+            loader: "postcss-loader",
+            options: { sourceMap: true },
+          },
+          {
+            loader: "less-loader",
+            options: { sourceMap: true },
+          },
         ],
       },
       {
@@ -113,6 +108,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "webpack+pnpm+react",
       template: path.resolve(__dirname, "../index.html"),
+      favicon: path.resolve(__dirname, "../static/favicon.ico"),
     }),
     new MiniCssExtractPlugin({
       filename: "style/[contenthash].css",
@@ -124,7 +120,7 @@ module.exports = {
       BUILD_INFO: JSON.stringify(`COMMIT_ID: ${commit()}`),
     }),
     new CopyWebpackPlugin({
-      patterns:['static']
+      patterns: ["static"],
     }),
     new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),
