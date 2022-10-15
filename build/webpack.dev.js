@@ -4,6 +4,16 @@ const { merge } = require("webpack-merge")
 const baseConfig = require("./webpack.base")
 
 module.exports = merge(baseConfig, {
+  entry: {
+    index: {
+      import: "./src/index.tsx",
+      dependOn: ["vendor"],
+    },
+    vendor: {
+      import: ["react", "react-dom"],
+      runtime: "runtime",
+    },
+  },
   devtool: "eval",
   mode: "development",
   target: "web",

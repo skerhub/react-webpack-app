@@ -17,16 +17,6 @@ function commit() {
 }
 
 module.exports = {
-  entry: {
-    index: {
-      import: "./src/index.tsx",
-      dependOn: ["vendor"],
-    },
-    vendor: {
-      import: ["react", "react-dom"],
-      runtime: "runtime",
-    },
-  },
   output: {
     path: path.join(__dirname, "..", "dist"),
     publicPath: "/",
