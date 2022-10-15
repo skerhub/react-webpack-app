@@ -1,8 +1,9 @@
-import Mine from "../pages/Mine"
-import Home from "../pages/Home"
-import Mine1 from "../pages/Mine/Mine1"
-import Mine2 from "../pages/Mine/Mine2"
-import Page404 from "../pages/Page404"
+import {lazy} from "react"
+const Mine = lazy(() => import("@/pages/Mine"))
+const Home = lazy(() => import("@/pages/Home"))
+const Mine1 = lazy(() => import("@/pages/Mine/Mine1"))
+const Mine2 = lazy(() => import("@/pages/Mine/Mine2"))
+const Page404 = lazy(() => import("@/pages/Page404"))
 const routes = [
 	{
 		path: "",
