@@ -2,9 +2,9 @@ const webpack = require("webpack")
 const ESLintPlugin = require("eslint-webpack-plugin")
 const { merge } = require("webpack-merge")
 const baseConfig = require("./webpack.base")
-
+const CustomWebpackPlugin = require("./custom-webpack-plugin")
 module.exports = merge(baseConfig, {
-  devtool: "eval",
+  devtool: "source-map",
   mode: "development",
   target: "web",
   devServer: {
@@ -24,5 +24,6 @@ module.exports = merge(baseConfig, {
     new ESLintPlugin({
       extensions: ["tsx", "ts"],
     }),
+    new CustomWebpackPlugin({})
   ],
 })
