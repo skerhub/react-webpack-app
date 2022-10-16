@@ -93,12 +93,28 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: "file-loader",
+        test: /\.(png|svg|jpg|gif|jpeg)$/,
+        type:"javascript/auto",
+        use:[
+          {
+            loader:'url-loader',
+            options:{
+              limit:10240,
+              esModule:false,
+              name:"assets/[name].[hash:8].[ext]"
+            }
+          }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"],
+        type:"javascript/auto",
+        use: [{
+          loader:"file-loader",
+          options:{
+            esModule:false
+          }
+        }],
       },
     ],
   },
