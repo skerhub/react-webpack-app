@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env REACT_ENV=dev webpack server --open --config build/webpack.dev.js",
+    "start": "cross-env REACT_ENV=dev webpack serve --open --config build/webpack.dev.js",
     "build": "cross-env REACT_ENV=test webpack --config build/webpack.pro.js",
     "build:rd": "cross-env REACT_ENV=rd webpack --config build/webpack.pro.js",
     "build:lgy": "cross-env REACT_ENV=lgy webpack --config build/webpack.pro.js",

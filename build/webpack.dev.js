@@ -4,7 +4,7 @@ const { merge } = require("webpack-merge")
 const baseConfig = require("./webpack.base")
 const CustomWebpackPlugin = require("./custom-webpack-plugin")
 module.exports = merge(baseConfig, {
-  devtool: "eval-source-map",
+  devtool: "inline-source-map",
   mode: "development",
   target: "web",
   devServer: {
