@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CopyWebpackPlugin = require("copy-webpack-plugin")
 const { REACT_ENV } = process.env
 const domanConfig = require("./domain.config")
+const CleanWebpackPlugin = require("./clean-webpack-plugin")
 function commit() {
   const child_process = require("child_process")
   const spawn = child_process.spawnSync("git", ["show", "-s", "--format=%h"])
@@ -27,7 +28,7 @@ module.exports = {
     },
   },
   output: {
-    clean:true,
+    // clean:true,//开启目录清除
     path: path.join(__dirname, "..", "dist"),
     publicPath: "/",
   },
@@ -143,5 +144,6 @@ module.exports = {
       patterns: ["static"],
     }),
     new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin({})
   ],
 }
